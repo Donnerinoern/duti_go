@@ -4,6 +4,7 @@ import (
     "fmt"
     "os"
     "os/exec"
+    // "bufio"
     "strconv"
 )
 
@@ -34,7 +35,7 @@ func divide(x, y float64) float64 {
 }
 
 func main() {
-    switch arg := os.Args[1]; arg {
+    switch os.Args[1] {
     case "remember":
         var input string
         fmt.Scan(&input)
@@ -65,5 +66,15 @@ func main() {
             os.Exit(5)
         }
         fmt.Print(string(out))
+    // case "add":
+    //     file, err := os.Open("/home/donnan/nixos/hosts/configuration.nix")
+    //     if err != nil {
+    //         fmt.Println(err)
+    //         os.Exit(5)
+    //     }
+    //     reader := bufio.NewReader(file)
+    //     for _, file := range reader {
+    //         fmt.Println(reader.ReadString)
+    //     }
     }        
 }
